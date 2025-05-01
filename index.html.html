@@ -1,132 +1,173 @@
-* Reset some basic elements */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tres Delish</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- W3.CSS stylesheet -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #fff8f0;
-  color: #333;
-  padding: 1rem;
-}
+<!-- ===== TOP NAVIGATION BAR ===== -->
+<div class="w3-top">
+  <div class="w3-bar w3-pink w3-padding w3-card" style="display: flex; justify-content: space-between; align-items: center;">
 
-header {
-  background-color: #ff69b4;
-  padding: 1rem 0;
-  text-align: center;
-  color: white;
-}
+    <!-- Logo (Left) -->
+    <!-- Logo source: Created using Canva -->
+    <div class="w3-bar-item w3-left">
+      <img src="images/logo.png" alt="Tres Delish Logo" style="height: 40px;">
+    </div>
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
+    <!-- Nav Links (Center) -->
+    <div class="w3-bar-item nav-links">
+      <a href="#home" class="w3-button w3-hover-white">Home</a>
+      <a href="#menu" class="w3-button w3-hover-white">Menu</a>
+      <a href="#checkout" class="w3-button w3-hover-white">Checkout</a>
+    </div>
 
-nav a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
+    <!-- Search Icon (Right) -->
+    <div class="w3-bar-item w3-right">
+      <button class="w3-button search-btn">🔍</button>
+    </div>
+  </div>
 
-section {
-  padding: 2rem 0;
-}
+  <!-- Toggleable Search Input -->
+  <div class="w3-bar w3-padding" style="display: flex; justify-content: flex-end;">
+    <input id="searchBar" class="w3-input w3-border" type="text" placeholder="Search..." style="max-width: 200px; display: none;">
+  </div>
+</div>
 
-#home img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-top: 1rem;
-}
+<!-- Spacer below fixed navbar -->
+<div style="padding-top: 100px;"></div>
 
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
+<!-- ===== HOME SECTION ===== -->
+<section id="home" class="w3-container w3-center w3-padding-64">
+  <h2>Welcome to Tres Delish</h2>
+  <p>Fresh, handmade doughnuts delivered to your door.</p>
+  <a href="#menu" class="w3-button w3-pink w3-margin-top">Browse Menu</a>
+</section>
 
-.menu-item {
-  background: #fff;
-  border: 1px solid #eee;
-  padding: 1rem;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+<!-- ===== MENU SECTION ===== -->
+<section id="menu" class="w3-container w3-padding-64">
+  <h2>Menu</h2>
 
-.menu-item h3 {
-  margin-bottom: 0.5rem;
-}
+  <!-- Burger button -->
+  <button class="w3-button w3-pink w3-margin-top" onclick="toggleMenu()">☰ Categories</button>
 
-.menu-item button {
-  background-color: #ff69b4;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
+  <!-- Hidden category menu -->
+  <div id="menuCategories" class="w3-panel w3-card w3-light-grey" style="display: none;">
+    <a href="#classics" class="w3-button w3-block w3-left-align">Classics</a>
+    <a href="#vegan" class="w3-button w3-block w3-left-align">Vegan</a>
+    <a href="#bundles" class="w3-button w3-block w3-left-align">Bundles</a>
+  </div>
 
-.menu-item button:hover {
-  background-color: #ff1493;
-}
+  <!-- Menu items -->
+  <div class="w3-row-padding w3-margin-top">
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="images/glazed.jpg" alt="Glazed Doughnut" style="width:100%">
+        <div class="w3-container">
+          <h4>Glazed</h4>
+          <p>£1.50</p>
+        </div>
+      </div>
+    </div>
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 500px;
-  margin: auto;
-}
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="images/choco.jpg" alt="Chocolate Doughnut" style="width:100%">
+        <div class="w3-container">
+          <h4>Chocolate</h4>
+          <p>£1.80</p>
+        </div>
+      </div>
+    </div>
 
-form input,
-form textarea {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="images/vegan.jpg" alt="Vegan Berry" style="width:100%">
+        <div class="w3-container">
+          <h4>Vegan Berry</h4>
+          <p>£1.70</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-form button {
-  background-color: #ff69b4;
-  color: white;
-  border: none;
-  padding: 0.7rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
+<!-- ===== CHECKOUT SECTION ===== -->
+<section id="checkout" class="w3-container w3-padding-64">
+  <h2>Checkout</h2>
 
-form button:hover {
-  background-color: #ff1493;
-}
+  <!-- Progress bar -->
+  <div class="w3-light-grey" style="height: 10px; border-radius: 5px;">
+    <div style="height: 10px; width: 20%; background-color: #FF9874; border-radius: 5px;"></div>
+  </div>
 
-footer {
-  text-align: center;
-  margin-top: 2rem;
-  padding: 1rem;
-  background: #ffe6f0;
-  color: #333;
-  font-size: 0.9rem;
-}
+  <!-- Accordion-style form -->
+  <div class="w3-row-padding w3-margin-top">
+    <div class="w3-half">
+      <div class="w3-card w3-white w3-padding w3-round-large w3-margin-bottom">
+        <h4>1. Customer Info</h4>
+        <input class="w3-input w3-margin-bottom w3-border" type="text" placeholder="Full Name">
+        <input class="w3-input w3-border" type="email" placeholder="Email">
+      </div>
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
+      <div class="w3-card w3-white w3-padding w3-round-large w3-margin-bottom">
+        <h4>2. Delivery / Collection</h4>
+        <input class="w3-input w3-border" type="text" placeholder="Address or pickup location">
+      </div>
+
+      <div class="w3-card w3-white w3-padding w3-round-large w3-margin-bottom">
+        <h4>3. Promo Code</h4>
+        <input class="w3-input w3-margin-bottom w3-border" type="text" placeholder="Enter code">
+        <button class="w3-button w3-pink">Apply</button>
+      </div>
+
+      <div class="w3-card w3-white w3-padding w3-round-large w3-margin-bottom">
+        <h4>4. Apply Discounts</h4>
+        <p>Discount will be applied if promo is valid.</p>
+      </div>
+
+      <div class="w3-card w3-white w3-padding w3-round-large">
+        <h4>5. Confirm Order</h4>
+        <p>Please review your order details before confirming.</p>
+      </div>
+    </div>
+
+    <!-- Order summary -->
+    <div class="w3-half">
+      <div class="w3-card w3-white w3-padding w3-round-large">
+        <h4>Order Summary</h4>
+        <ul class="w3-ul">
+          <li>Glazed x1 – £1.50</li>
+          <li>Chocolate x1 – £1.80</li>
+        </ul>
+        <p><strong>Total:</strong> £3.30</p>
+        <button class="w3-button w3-pink w3-margin-top w3-round-large w3-block">Place Order</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="w3-center w3-padding w3-light-grey">
+  <p>&copy; 2025 Tres Delish</p>
+</footer>
+
+<!-- ===== SCRIPT: Toggle Search + Menu ===== -->
+<script>
+  document.querySelector(".search-btn").onclick = function () {
+    var bar = document.getElementById("searchBar");
+    bar.style.display = (bar.style.display === "none") ? "block" : "none";
+  };
+
+  function toggleMenu() {
+    var menu = document.getElementById("menuCategories");
+    menu.style.display = (menu.style.display === "none") ? "block" : "none";
   }
+</script>
 
-  .menu-grid {
-    grid-template-columns: 1fr;
-  }
-
-  form {
-    width: 100%;
-  }
-}
+</body>
+</html>
