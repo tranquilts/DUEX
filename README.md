@@ -1,13 +1,13 @@
 Tres Delish Donuts - Doughnut Ordering System
 
 Project Overview
-Tres Delish Donuts is a responsive, ffornt-end prototype for a digital doughnut store. This was developed using HTML, CSS and W3.CSS to replicate a real e-commerce flow for a small business.
+Tres Delish Donuts is a responsive, front-end prototype for a digital doughnut store. This was developed using HTML, CSS and W3.CSS to replicate a real e-commerce flow for a small business.
 
 User Stories:
 As a customer, I want to browse available doughnuts in an organised, clear menu.
 As a customer, I want to apply promotion codes at checkout to get a discount.
 As a user, I want to complete a simple checkout process including my name, address and order.
-As an user, I want the site to work on both my mobile and desktop.
+As a user, I want the site to work on both my mobile and desktop.
 
 Development Process:
 
@@ -38,6 +38,18 @@ Navigation bar links scroll to correct sections
 Burger menu reveals and hides category links
 Promotion code input and order summary are visible on desktop.
 The responsive layout is verified on Chrome, Firefox and Safari.
+
+Annotations:
+
+Homepage - ![Screenshot 2025-05-02 001925](https://github.com/user-attachments/assets/061006d5-ba5a-4c1d-9db6-f773bf3707ea)
+
+Menu - ![Screenshot 2025-05-02 001947](https://github.com/user-attachments/assets/887492d3-0dc4-4f76-a466-1029296dc47f)
+
+Checkout - ![Screenshot 2025-05-02 001909](https://github.com/user-attachments/assets/9c660579-4d0c-4aed-a078-10b90716d18a)
+
+Final website sections:
+
+
 
 Validator: 
 passed
