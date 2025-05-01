@@ -1,0 +1,64 @@
+:root {
+  --primary: #FF9874;
+  --accent: #FFD7C4;
+  --secondary: #DAEFFF;
+  --highlight: #9DBDFF;
+  --text-dark: #333333;
+  --text-light: #ffffff;
+}
+
+/* General body styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff8f0;
+  color: var(--text-dark);
+}
+
+/* Override W3 pink with your brand pink */
+.w3-pink {
+  background-color: var(--primary) !important;
+}
+
+/* Navigation links */
+.nav-links a {
+  margin: 0 8px;
+  font-weight: bold;
+}
+
+/* Logo image */
+.logo {
+  height: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .w3-bar-item {
+    padding: 8px 12px;
+  }
+}
+
+/* Menu burger dropdown */
+#menuCategories a {
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+/* Checkout styling */
+.w3-card {
+  background-color: var(--secondary);
+}
+
+.w3-button {
+  border-radius: 6px;
+}
+
+/* Order summary list */
+.w3-ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;
+}
