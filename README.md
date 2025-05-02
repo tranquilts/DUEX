@@ -1,6 +1,15 @@
 Tres Delish Donuts - Doughnut Ordering System
 
-Project Overview
+Project objectives:
+The main project objectives of this project is to create a website for users aged 18 and over to be able to view a varied doughnut mneu ranging from different sizes, flavours and shaoes all from the comfort of their device. The website sims to have an aesthetic and coorinsted colour scheme ss well as visual aids (product images) to help complement the user experience.
+
+User Persona @ - Simon Denzel
+Simon Denzel is a 35 year old office professional, known to order the best treats foe office events. He looks for a good website layout and expects a clean. professiona, shopping experience without pop-ups or ads.
+
+User Persona 2 - Zainab Hassan
+
+Zainab Hassan is a 21 year old psychology university student, who tends to get overwhelmed with sssignments and loves to treat herself with a sweet treat after a long week of university.
+
 Tres Delish Donuts is a responsive, front-end prototype for a digital doughnut store. This was developed using HTML, CSS and W3.CSS to replicate a real e-commerce flow for a small business.
 
 User Stories:
