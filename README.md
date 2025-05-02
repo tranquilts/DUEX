@@ -4,19 +4,15 @@ Project objectives:
 The main project objectives of this project is to create a website for users aged 18 and over to be able to view a varied doughnut mneu ranging from different sizes, flavours and shaoes all from the comfort of their device. The website sims to have an aesthetic and coorinsted colour scheme ss well as visual aids (product images) to help complement the user experience.
 
 User Persona @ - Simon Denzel
-Simon Denzel is a 35 year old office professional, known to order the best treats foe office events. He looks for a good website layout and expects a clean. professiona, shopping experience without pop-ups or ads.
+Simon Denzel is a 35 year old office professional, known to order the best treats foe office events. He looks for a good website layout and expects a clean. professiona, shopping experience without pop-ups or ads with an emphasis on quality and attention to detail. The site delivers on this with a clean, provessional browsing expeirnce with clear lables on products with allergy and dietary labels, ensuring transparency and safety. 
+The bull buy section and full cost breakdown assists him in planning for large groups with discounts snd bundle deals adding value. All elements are designed ro meet Simons's needs for clarity, quality and professionalism.
 
 User Persona 2 - Zainab Hassan
 
-Zainab Hassan is a 21 year old psychology university student, who tends to get overwhelmed with sssignments and loves to treat herself with a sweet treat after a long week of university.
+Zainab Hassan is a 21 year old psychology university student, who tends to get overwhelmed with sssignments and loves to treat herself with a sweet treat after a long week of university. Zainab finds appeal in visually appelaing, Instagram products so the site uses bold, brighg collurs, playful elements to mirror her energy and preference. Product images are styled intentionally for sharing purposes. As Zainab skims congent, festures like vegan options zre labelled sith bold headings and appealing visuals. The homepage showcases deals and discoints and features like banners guiding her to trending/personalised offers. Minimal effort ensures s smooth, easy and interacfive experience fitting effortlessly with her fast-paced, socisl lifestyle.
 
-Tres Delish Donuts is a responsive, front-end prototype for a digital doughnut store. This was developed using HTML, CSS and W3.CSS to replicate a real e-commerce flow for a small business.
 
-User Stories:
-As a customer, I want to browse available doughnuts in an organised, clear menu.
-As a customer, I want to apply promotion codes at checkout to get a discount.
-As a user, I want to complete a simple checkout process including my name, address and order.
-As a user, I want the site to work on both my mobile and desktop.
+
 
 Development Process:
 
