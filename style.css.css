@@ -1,64 +1,137 @@
-:root {
-  --primary: #FF9874;
-  --accent: #FFD7C4;
-  --secondary: #DAEFFF;
-  --highlight: #9DBDFF;
-  --text-dark: #333333;
-  --text-light: #ffffff;
+::root {
+  --primary: #fff;
+  --secondary: #f2f2f2;
+  --highlight: #9DBDFF;     /* blue from wireframes */
+  --accent: #FFD166;        /* optional accent if needed */
+  --text-dark: #333;
+  --text-light: #fff;
 }
 
-/* General body styles */
 body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #fff8f0;
-  color: var(--text-dark);
-}
-
-/* Override W3 pink with your brand pink */
-.w3-pink {
-  background-color: var(--primary) !important;
-}
-
-/* Navigation links */
-.nav-links a {
-  margin: 0 8px;
-  font-weight: bold;
-}
-
-/* Logo image */
-.logo {
-  height: 40px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .w3-bar-item {
-    padding: 8px 12px;
-  }
-}
-
-/* Menu burger dropdown */
-#menuCategories a {
-  font-weight: bold;
-  color: var(--text-dark);
-}
-
-/* Checkout styling */
-.w3-card {
   background-color: var(--secondary);
+  color: var(--text-dark);
 }
 
-.w3-button {
-  border-radius: 6px;
+header {
+  background-color: var(--highlight);
+  color: var(--text-light);
+  padding: 20px;
+  text-align: center;
 }
 
-/* Order summary list */
-.w3-ul li {
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.w3-card {
+  background-color: var(--primary);
+  border-radius: 10px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.w3-card:hover {
+  transform: scale(1.05);
+}
+
+.w3-container {
+  padding: 15px;
+  text-align: center;
+}
+
+.checkout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.left-panel, .right-panel {
+  flex: 1;
+  background-color: var(--highlight); /* blue container */
+  color: var(--text-light); /* white text */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.accordion {
+  margin-top: 10px;
+}
+
+.accordion button {
+  width: 100%;
+  background-color: white;
+  color: var(--text-dark);
+  font-weight: bold;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.accordion button:hover {
+  background-color: #f0f0f0;
+}
+
+.panel {
+  background-color: #fff;
+  color: var(--text-dark);
+  padding: 15px;
+  margin-top: 5px;
+  border-radius: 4px;
+}
+
+.panel input,
+.panel select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.right-panel h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: var(--text-light);
+}
+
+.right-panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.right-panel li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding: 8px 0;
-  border-bottom: 1px solid #ccc;
+}
+
+.right-panel .total {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+footer {
+  background-color: var(--text-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
 }
