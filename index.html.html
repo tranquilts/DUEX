@@ -1,171 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Tres Delish Donuts</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- W3.CSS stylesheet -->
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ===== Navigation Bar ===== -->
-<div class="w3-top">
-  <div class="w3-bar w3-pink w3-card" style="display: flex; justify-content: space-between; align-items: center;">
+<header class="top-bar">
+  <img src="images/logo.png" alt="Tres Delish Logo" class="logo">
+  <nav class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+       <a href="#checkout">Bulk Buy</a>
+         <a href="#checkout">Custom</a> 
+        <a href="#checkout">Discounts</a>
+           <a href="#checkout">Track Order</a>
+             <a href="#checkout">Login/Sign up</a>
+   
+    
+  </nav>
+</header>
 
-    <!-- Logo (Left) -->
-    <!-- Logo source: Created using Figma and Canva -->
-    <div class="w3-bar-item w3-left">
-      <img src="images/logo.png" alt="Tres Delish Logo" style="height: 40px;">
-    </div>
+<main>
+  <section id="home" class="hero">
+    <h1>A treat in every bite</h1>
+    <p>Order fresh doughnuts straight to your door</p>
+    <a href="#menu" class="button">Browse Menu</a>
+    <img src="images/hero-donuts.jpg" alt="Hero Donuts">
+  </section>
 
-    <!-- Nav Links (Top) -->
-    <div class="w3-bar-item nav-links">
-      <a href="#home" class="w3-button w3-hover-white">Home</a>
-      <a href="#menu" class="w3-button w3-hover-white">Menu</a>
-      <a href="#checkout" class="w3-button w3-hover-white">Checkout</a>
-    </div>
+  <section id="menu" class="carousel">
+    <!-- Only showing 6 products as requested -->
+    <div class="card"><img src=""><h4>Mixed Doughnut Bundle</h4><p>£15.00</p></div>
+    <div class="card"><img src=".png"><h4>Mini Doughnut Ball Bites</h4><p>£12.00</p></div>
+    <div class="card"><img src=".png"><h4>Single Glazed Doughnut</h4><p>£2.50</p></div>
+    <div class="card"><img src=".png"><h4>Choco Sprinkle Doughnut</h4><p>£2.50</p></div>
+    <div class="card"><img src=".png"><h4>Strawberry Heart Doughnut</h4><p>£5.00</p></div>
+    <div class="card"><img src="Group 15.png"><h4>Lemon Glaze Doughnut</h4><p>£6.00</p></div>
+  </section>
 
-    <!-- Search Icon (Right) -->
-    <div class="w3-bar-item w3-right">
-      <button class="w3-button search-btn">🔍</button>
-    </div>
-  </div>
+  <section id="checkout" class="checkout">
+    <div class="left-panel">
+      <h2>Checkout</h2>
 
-  <!-- Toggleable Search Input -->
-  <div class="w3-bar w3-padding" style="display: flex; justify-content: flex-end;">
-    <input id="searchBar" class="w3-input w3-border" type="text" placeholder="Search..." style="max-width: 200px; display: none;">
-  </div>
-</div>
+      <div class="accordion">
+        <button onclick="toggleAccordion('info')">1. Customer Info</button>
+        <div id="info" class="panel">
+          <input type="text" placeholder="Full Name">
+          <input type="email" placeholder="Email Address">
+        </div>
 
-<!-- Spacer below fixed navbar -->
-<div style="padding-top: 100px;"></div>
+        <button onclick="toggleAccordion('delivery')">2. Delivery / Collection</button>
+        <div id="delivery" class="panel">
+          <input type="text" placeholder="Address">
+          <input type="tel" placeholder="Phone Number">
+        </div>
 
-<!-- ===== HOME SECTION ===== -->
-<section id="home" class="w3-container w3-center w3-padding-64">
-  <h2>Welcome to Tres Delish</h2>
-  <p>Fresh, handmade doughnuts delivered to your door.</p>
-  <a href="#menu" class="w3-button w3-pink w3-margin-top">Browse Menu</a>
-</section>
+        <button onclick="toggleAccordion('promo')">3. Promo Code</button>
+        <div id="promo" class="panel">
+          <input type="text" placeholder="Promo Code">
+        </div>
 
-<!-- ===== MENU SECTION ===== -->
-<section id="menu" class="w3-container w3-padding-64">
-  <h2>Menu</h2>
-
-  <!-- Burger button -->
-  <button class="w3-button w3-pink w3-margin-top" onclick="toggleMenu()">☰ Categories</button>
-
-  <!-- Hidden category menu -->
-  <div id="menuCategories" class="w3-panel w3-card w3-light-grey" style="display: none;">
-    <a href="#classics" class="w3-button w3-block w3-left-align">Classics</a>
-    <a href="#vegan" class="w3-button w3-block w3-left-align">Vegan</a>
-    <a href="#bundles" class="w3-button w3-block w3-left-align">Bundles</a>
-  </div>
-
-  <!-- Menu items -->
-  <div class="w3-row-padding w3-margin-top">
-    <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4">
-        <img src="images/glazed.jpg" alt="Glazed Doughnut" style="width:100%">
-        <div class="w3-container">
-          <h4>Glazed</h4>
-          <p>£1.50</p>
+        <button onclick="toggleAccordion('confirm')">4. Confirm Order</button>
+        <div id="confirm" class="panel">
+          <p>Review your order before submitting your order.</p>
         </div>
       </div>
     </div>
 
-    <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4">
-        <img src="images/choco.jpg" alt="Chocolate Doughnut" style="width:100%">
-        <div class="w3-container">
-          <h4>Chocolate</h4>
-          <p>£1.80</p>
-        </div>
-      </div>
+    <div class="right-panel">
+      <h3>Order Summary</h3>
+      <ul>
+        <li>Glazed x1 – £2.50</li>
+        <li>Chocolate x1 – £2.50</li>
+      </ul>
+      <p><strong>Total:</strong>£5.00</p>
+      <button class="button">Place Order</button>
     </div>
+  </section>
+</main>
 
-    <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4">
-        <img src="images/vegan.jpg" alt="Vegan Berry" style="width:100%">
-        <div class="w3-container">
-          <h4>Vegan Berry</h4>
-          <p>£1.70</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CHECKOUT SECTION ===== -->
-<section id="checkout" class="w3-container w3-padding-64">
-  <h2>Checkout</h2>
-
-  <!-- Progress bar -->
-  <div class="w3-light-grey" style="height: 10px; border-radius: 5px;">
-    <div style="height: 10px; width: 20%; background-color: #FF9874; border-radius: 5px;"></div>
-  </div>
-
-  <!-- Accordion-style form -->
-  <div class="w3-row-padding w3-margin-top">
-    <div class="w3-half">
-      <div class="w3-card w3-white w3-padding w3-round-large w3-margin-bottom">
-        <h4>1. Customer Info</h4>
-        <input class="w3-input w3-margin-bottom w3-border" type="text" placeholder="Full Name">
-        <input class="w3-input w3-border" type="email" placeholder="Email">
-      </div>
-
-      <div class="w3-card w3-white w3-padding w3-round-large w3-margin-bottom">
-        <h4>2. Delivery / Collection</h4>
-        <input class="w3-input w3-border" type="text" placeholder="Address or pickup location">
-      </div>
-
-      <div class="w3-card w3-white w3-padding w3-round-large w3-margin-bottom">
-        <h4>3. Promo Code</h4>
-        <input class="w3-input w3-margin-bottom w3-border" type="text" placeholder="Enter code">
-        <button class="w3-button w3-pink">Apply</button>
-      </div>
-
-      <div class="w3-card w3-white w3-padding w3-round-large w3-margin-bottom">
-        <h4>4. Apply Discounts</h4>
-        <p>Discount will be applied if promo code is valid.</p>
-      </div>
-
-      <div class="w3-card w3-white w3-padding w3-round-large">
-        <h4>5. Confirm Order</h4>
-        <p>Please review your order details before confirming your order.</p>
-      </div>
-    </div>
-
-    <!-- Order summary -->
-    <div class="w3-half">
-      <div class="w3-card w3-white w3-padding w3-round-large">
-        <h4>Order Summary</h4>
-        <ul class="w3-ul">
-          <li>Glazed x1 – £1.50</li>
-          <li>Chocolate x1 – £1.80</li>
-        </ul>
-        <p><strong>Total:</strong> £3.30</p>
-        <button class="w3-button w3-pink w3-margin-top w3-round-large w3-block">Place Order</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer class="w3-center w3-padding w3-light-grey">
-  <p>&copy; 2025 Tres Delish Donuts</p>
-</footer>
-
-<!-- ===== SCRIPT: Toggle Search + Menu ===== -->
 <script>
-  document.querySelector(".search-btn").onclick = function () {
-    var bar = document.getElementById("searchBar");
-    bar.style.display = (bar.style.display === "none") ? "block" : "none";
-  };
-
-  function toggleMenu() {
-    var menu = document.getElementById("menuCategories");
-    menu.style.display = (menu.style.display === "none") ? "block" : "none";
+  function toggleAccordion(id) {
+    const panel = document.getElementById(id);
+    panel.style.display = panel.style.display === "block" ? "none" : "block";
   }
 </script>
 
