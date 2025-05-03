@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tres Delish</title>
+    <title>Tres Delish Donuts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -23,7 +23,7 @@
         }
 
         .w3-pink {
-            background-color: var(--primary);
+            background-color: var(--primary) !important;
             color: var(--text-light);
         }
 
@@ -80,6 +80,9 @@
             scroll-snap-type: x mandatory;
             gap: 16px;
             padding: 20px 0;
+            overflow: auto;
+            position: relative;
+            max-height: none;
         }
 
         .carousel::-webkit-scrollbar {
@@ -90,7 +93,9 @@
             flex: 0 0 auto;
             scroll-snap-align: start;
             width: 250px;
+            height: auto;
             text-align: center;
+            margin-right: 16px;
         }
 
         .carousel .w3-card img{
@@ -150,6 +155,35 @@
             margin-top: 10px;
         }
         }
+
+        /* New styles for slider controls */
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .slider-control-button {
+            background-color: var(--primary);
+            color: var(--text-light);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            font-size: 1rem;
+        }
+
+        .slider-control-button:hover {
+            background-color: var(--highlight);
+        }
+
+        .slider-control-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
     </style>
 </head>
 <body>
@@ -206,63 +240,66 @@
             <img src="Group 15.png" alt="Mixed Doughnut" >
             <div class="w3-container">
                 <h4>Mixed Doughnut Bundle</h4>
-             <h5>Vegan</h5>
-          
-              <p>£15.00</p>
-      
-              <p>An amazing bundle of a different variety of doughnuts...</p>
+                <h5>Vegan</h5>
+               
+                <p>£15.00</p>
+       
+                <p>An amazing bundle of a different variety of doughnuts...</p>
             </div>
         </div>
         <div class="w3-card">
             <img src="images/Group 1.jpg" alt="Mixed" >
             <div class="w3-container">
                 <h4>Mini Doughnut Balls Bundle</h4>
-              <h5>Gluten Free</h5>
+                <h5>Gluten Free</h5>
                 <p>£12.00</p>
-              <p>Mini doughnut bites of joy, perfect to satisfy any cravings...</p>
+                <p>Mini doughnut bites of joy, perfect to satisfy any cravings...</p>
             </div>
         </div>
         <div class="w3-card">
             <img src="Group 2.png" alt="gLAZE" >
             <div class="w3-container">
                 <h4>Single Glaze Doughnut</h4>
-              <h5>Vegetarian</h5>
+                <h5>Vegetarian</h5>
                 <p>£2.50</p>
-              <p>A classic single glazed doughnut...</p>
+                <p>A classic single glazed doughnut...</p>
             </div>
-        
+           
+        </div>
         <div class="w3-card">
             <img src="Group 3.png" alt="Milk Choc" >
             <div class="w3-container">
-                <h4>Choco Sprinkle Doughnut</h4> 
-              <h5><strong>Vegan</strong></h5>
+                <h4>Choco Sprinkle Doughnut</h4>
+                <h5><strong>Vegan</strong></h5>
                 <p>£2.50</p>
-              <p>Choco sprinkle doughnuts, perfect for all choco lovers...</p>
-              <</h5>
+                <p>Choco sprinkle doughnuts, perfect for all choco lovers...</p>
+             
             </div>
         </div>
         <div class="w3-card">
             <img src="Group 4.png" alt="Heart" >
             <div class="w3-container">
                 <h4>Strawberry Heart Doughnut</h4>
-              <h5>Vegatarian</h5>
+                <h5>Vegatarian</h5>
                 <p>£5.00</p>
-              <p> In love... with strawberry heart shaped doughnuts...</p>
+                <p> In love... with strawberry heart shaped doughnuts...</p>
             </div>
         </div>
         <div class="w3-card">
             <img src="Group 5.png" alt"Lemon" class="Glaze" >
             <div class="w3-container">
                 <h4>Lemon Glaze Doughnut</h4>
-              <h5>Vegan</h5>
+                <h5>Vegan</h5>
                 <p>£6.00</p>
-              <p>Doughnuts with a tangy lemon glaze drizzled on top...</p>
+                <p>Doughnuts with a tangy lemon glaze drizzled on top...</p>
             </div>
-        
-
-
-
-        >
+        </div>
+    </div>
+    <div class="slider-controls">
+        <button class="slider-control-button prev-button" onclick="scrollCarousel(-1)">❮</button>
+        <button class="slider-control-button next-button" onclick="scrollCarousel(1)">❯</button>
+    </div>
+</section>
 
 <section id="checkout" class="w3-container">
     <h2 class="w3-center">Checkout</h2>
@@ -322,7 +359,22 @@
             x.classList.add("w3-show");
         }
     }
+
+    function scrollCarousel(direction) {
+        const carousel = document.querySelector(".carousel");
+        const cardWidth = document.querySelector(".carousel .w3-card").offsetWidth;
+        const scrollAmount = cardWidth * direction;
+
+        carousel.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+
+
+
 </script>
 
 </body>
 </html>
+
