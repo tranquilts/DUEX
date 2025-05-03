@@ -1,3 +1,4 @@
+<
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,7 +6,186 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary: #FF9874;
+            --accent: #FFD7C4;
+            --background: #DAEFFF;
+            --highlight: #9DBDFF;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+        }
+
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: var(--background);
+            color: var(--text-dark);
+        }
+
+        .w3-pink {
+            background-color: var(--primary) !important;
+            color: var(--text-light);
+        }
+
+        .w3-card {
+            background-color: var(--accent);
+            border-radius: 10px;
+        }
+
+        .w3-button {
+            border-radius: 5px;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        #home {
+            padding: 80px 20px;
+            background-color: var(--accent);
+            border-radius: 12px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        #home img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        #home h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        #home p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        #menu h2 {
+            font-size: 2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 16px;
+            padding: 20px 0;
+            overflow: auto;
+            position: relative;
+            max-height: none;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel .w3-card {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            width: 250px;
+            height: auto;
+            text-align: center;
+            margin-right: 16px;
+        }
+
+        .carousel .w3-card img{
+            object-fit: cover;
+            height: 150px;
+        }
+        .nav-links a{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        #checkout h2{
+            text-align: center;
+        }
+        .w3-input{
+            border-radius: 5px;
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .w3-button{
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .w3-bar .nav-links{
+            display: flex;
+            align-items: center;
+        }
+        .w3-bar{
+            display: flex;
+            justify-content: space-between ;
+            align-items: center ;
+        }
+        .w3-bar .w3-left{
+            display: flex;
+            align-items: center;
+        }
+        .w3-bar .w3-right{
+            display: flex;
+            align-items: center;
+        }
+        @media screen and (max-width: 768px) {
+        .w3-bar .nav-links {
+            display: none;
+        }
+        .w3-bar {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .w3-bar .w3-left, .w3-bar .w3-right{
+            width: 100%;
+            justify-content: space-between;
+        }
+        #searchBar{
+            margin-top: 10px;
+        }
+        }
+
+        /* New styles for slider controls */
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .slider-control-button {
+            background-color: var(--primary);
+            color: var(--text-light);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            font-size: 1rem;
+        }
+
+        .slider-control-button:hover {
+            background-color: var(--highlight);
+        }
+
+        .slider-control-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -35,11 +215,12 @@
             <a href="#checkout" class="w3-button">Login/Signup</a>
         </div>
         <div class="w3-bar-item w3-right">
+          <img src="search.png" alt="search" class"search">
             <button class="w3-button search-btn">🔍</button>
         </div>
     </div>
     <div class="w3-bar w3-padding" style="justify-content: flex-end; display: flex;">
-        <input id="searchBar" class="w3-input w3-border" type="text" placeholder="Search..." style="max-width: 200px; display: none;">
+        <input id="searchBar" class="w3-input w3-border" type="text" placeholder="Search" style="max-width: 200px; display: none;">
     </div>
 </div>
 
@@ -57,55 +238,69 @@
     <button class="w3-button w3-pink" onclick="toggleSidebar()">☰ Open Categories</button>
     <div class="carousel">
         <div class="w3-card">
-            <img src="Group 15.png" alt="Biscoff Bliss" >
+            <img src="Group 15.png" alt="Mixed Doughnut" >
             <div class="w3-container">
                 <h4>Mixed Doughnut Bundle</h4>
-                <p>£3.50</p>
-                <p>Lotus Biscoff spread and a Lotus Biscoff biscuit</p>
+                <h5>Vegan</h5>
+               
+                <p>£15.00</p>
+       
+                <p>An amazing bundle of a different variety of doughnuts...</p>
             </div>
         </div>
         <div class="w3-card">
-            <img src="images/Group 15.jpg" alt="Caramel Delight" >
+            <img src="images/Group 1.jpg" alt="Mixed" >
             <div class="w3-container">
                 <h4>Mini Doughnut Balls Bundle</h4>
-                <p>£3.50</p>
-                 <p>Caramel glaze, filled with caramel sauce, topped with chocolate & caramel pieces</p>
+                <h5>Gluten Free</h5>
+                <p>£12.00</p>
+                <p>Mini doughnut bites of joy, perfect to satisfy any cravings...</p>
             </div>
         </div>
         <div class="w3-card">
-            <img src="Group 15.png" alt="Oreo Crumble" >
+            <img src="Group 2.png" alt="gLAZE" >
             <div class="w3-container">
-                <h4>Single Glaze Doughnut/h4>
-                <p>£3.50</p>
-                <p>Chocolate glaze, filled with Oreo frosting, topped with Oreo pieces</p>
+                <h4>Single Glaze Doughnut</h4>
+                <h5>Vegetarian</h5>
+                <p>£2.50</p>
+                <p>A classic single glazed doughnut...</p>
             </div>
+           
         </div>
         <div class="w3-card">
-            <img src="Group 15.png" alt="White Choc Raspberry" >
+            <img src="Group 3.png" alt="Milk Choc" >
             <div class="w3-container">
                 <h4>Choco Sprinkle Doughnut</h4>
-                <p>£3.50</p>
-                <p>Raspberry glaze, filled with white chocolate mousse, topped with white chocolate shavings</p>
+                <h5><strong>Vegan</strong></h5>
+                <p>£2.50</p>
+                <p>Choco sprinkle doughnuts, perfect for all choco lovers...</p>
+             
             </div>
         </div>
         <div class="w3-card">
-            <img src="Group 15.png" alt="Vegan Chocolate" >
+            <img src="Group 4.png" alt="Heart" >
             <div class="w3-container">
-                <h4>Strawberry Heart Doughnut/h4>
-                <p>£3.00</p>
-                <p>Dark chocolate glaze, filled with vegan chocolate mousse, topped with da
+                <h4>Strawberry Heart Doughnut</h4>
+                <h5>Vegatarian</h5>
+                <p>£5.00</p>
+                <p> In love... with strawberry heart shaped doughnuts...</p>
+            </div>
         </div>
         <div class="w3-card">
-            <img src="Group 15.png" alt="Gluten-Free Berry" >
+            <img src="Group 5.png" alt"Lemon" class="Glaze" >
             <div class="w3-container">
-                <h4>Lemon Glazs Doughnut</h4>
-                <p>£4.00</p>
-                <p>Berry glaze, filled with
+                <h4>Lemon Glaze Doughnut</h4>
+                <h5>Vegan</h5>
+                <p>£6.00</p>
+                <p>Doughnuts with a tangy lemon glaze drizzled on top...</p>
             </div>
-        
-
-
-        >
+        </div>
+    </div>
+    <div class="slider-controls">
+        <button class="slider-control-button prev-button" onclick="scrollCarousel(-1)">❮</button>
+        <button class="slider-control-button next-button" onclick="scrollCarousel(1)">❯</button>
+    </div>
+</section>
 
 <section id="checkout" class="w3-container">
     <h2 class="w3-center">Checkout</h2>
@@ -130,7 +325,7 @@
 
         <button onclick="toggleAccordion('confirm')" class="w3-button w3-block w3-left-align w3-pink">4. Confirm Order</button>
         <div id="confirm" class="w3-container w3-hide">
-            <p>Review your order and details before submitting.</p>
+            <p>Review your order and details before submitting your order.</p>
         </div>
     </div>
 
@@ -165,6 +360,20 @@
             x.classList.add("w3-show");
         }
     }
+
+    function scrollCarousel(direction) {
+        const carousel = document.querySelector(".carousel");
+        const cardWidth = document.querySelector(".carousel .w3-card").offsetWidth;
+        const scrollAmount = cardWidth * direction;
+
+        carousel.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+
+
+
 </script>
 
 </body>
