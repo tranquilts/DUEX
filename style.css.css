@@ -1,137 +1,171 @@
-::root {
-  --primary: #fff;
-  --secondary: #f2f2f2;
-  --highlight: #9DBDFF;     /* blue from wireframes */
-  --accent: #FFD166;        /* optional accent if needed */
-  --text-dark: #333;
-  --text-light: #fff;
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tres Delish</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  background-color: var(--secondary);
-  color: var(--text-dark);
-}
+<div class="w3-sidebar w3-bar-block w3-light-grey w3-left" style="display:none" id="menuSidebar">
+    <button class="w3-bar-item w3-button" onclick="toggleSidebar()">Close ×</button>
+    <a href="#classics" class="w3-bar-item w3-button">Classics</a>
+    <a href="#specials" class="w3-bar-item w3-button">Specials</a>
+    <a href="#occasions" class="w3-bar-item w3-button">Occasions</a>
+    <a href="#vegan" class="w3-bar-item w3-button">Vegan</a>
+    <a href="#glutenfree" class="w3-bar-item w3-button">Gluten Free</a>
+    <a href="#custom" class="w3-bar-item w3-button">Custom</a>
+    <a href="#bundles" class="w3-bar-item w3-button">Bundles</a>
+</div>
 
-header {
-  background-color: var(--highlight);
-  color: var(--text-light);
-  padding: 20px;
-  text-align: center;
-}
+<div class="w3-top">
+    <div class="w3-bar w3-pink w3-padding w3-card" >
+        <div class="w3-bar-item w3-left">
+            <img src="images/" alt="Tres Delish Logo" class="logo">
+        </div>
+        <div class="w3-bar-item nav-links">
+            <a href="#home" class="w3-button">Home</a>
+            <a href="#menu" class="w3-button">Browse Menu</a>
+            <a href="#bulk" class="w3-button">Bulk Buy</a>
+            <a href="#custom" class="w3-button">Custom</a>
+            <a href="#discounts" class="w3-button">Discounts</a>
+            <a href="#trackorder" class="w3-button">Track Order</a>
+            <a href="#checkout" class="w3-button">Login/Signup</a>
+        </div>
+        <div class="w3-bar-item w3-right">
+            <button class="w3-button search-btn">🔍</button>
+        </div>
+    </div>
+    <div class="w3-bar w3-padding" style="justify-content: flex-end; display: flex;">
+        <input id="searchBar" class="w3-input w3-border" type="text" placeholder="Search..." style="max-width: 200px; display: none;">
+    </div>
+</div>
 
-.carousel {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 20px;
-  scroll-snap-type: x mandatory;
-}
+<div style="padding-top: 100px;"></div>
 
-.w3-card {
-  background-color: var(--primary);
-  border-radius: 10px;
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  width: 250px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
+<section id="home" class="w3-container w3-center w3-card">
+    <h2>A treat in every bite</h2>
+    <p>Order fresh doughnuts straight to your door</p>
+    <a href="#menu" class="w3-button w3-pink">Browse Menu</a>
+    <img src="images/Group 15.png" alt="Doughnut Banner">
+</section>
 
-.w3-card:hover {
-  transform: scale(1.05);
-}
+<section id="menu" class="w3-container">
+    <h2>Menu</h2>
+    <button class="w3-button w3-pink" onclick="toggleSidebar()">☰ Open Categories</button>
+    <div class="carousel">
+        <div class="w3-card">
+            <img src="Group 15.png" alt="Biscoff Bliss" >
+            <div class="w3-container">
+                <h4>Mixed Doughnut Bundle</h4>
+                <p>£3.50</p>
+                <p>Lotus Biscoff spread and a Lotus Biscoff biscuit</p>
+            </div>
+        </div>
+        <div class="w3-card">
+            <img src="images/Group 15.jpg" alt="Caramel Delight" >
+            <div class="w3-container">
+                <h4>Mini Doughnut Balls Bundle</h4>
+                <p>£3.50</p>
+                 <p>Caramel glaze, filled with caramel sauce, topped with chocolate & caramel pieces</p>
+            </div>
+        </div>
+        <div class="w3-card">
+            <img src="Group 15.png" alt="Oreo Crumble" >
+            <div class="w3-container">
+                <h4>Single Glaze Doughnut/h4>
+                <p>£3.50</p>
+                <p>Chocolate glaze, filled with Oreo frosting, topped with Oreo pieces</p>
+            </div>
+        </div>
+        <div class="w3-card">
+            <img src="Group 15.png" alt="White Choc Raspberry" >
+            <div class="w3-container">
+                <h4>Choco Sprinkle Doughnut</h4>
+                <p>£3.50</p>
+                <p>Raspberry glaze, filled with white chocolate mousse, topped with white chocolate shavings</p>
+            </div>
+        </div>
+        <div class="w3-card">
+            <img src="Group 15.png" alt="Vegan Chocolate" >
+            <div class="w3-container">
+                <h4>Strawberry Heart Doughnut/h4>
+                <p>£3.00</p>
+                <p>Dark chocolate glaze, filled with vegan chocolate mousse, topped with da
+        </div>
+        <div class="w3-card">
+            <img src="Group 15.png" alt="Gluten-Free Berry" >
+            <div class="w3-container">
+                <h4>Lemon Glazs Doughnut</h4>
+                <p>£4.00</p>
+                <p>Berry glaze, filled with
+            </div>
+        
 
-.w3-container {
-  padding: 15px;
-  text-align: center;
-}
 
-.checkout {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 1200px;
-}
+        >
 
-.left-panel, .right-panel {
-  flex: 1;
-  background-color: var(--highlight); /* blue container */
-  color: var(--text-light); /* white text */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
+<section id="checkout" class="w3-container">
+    <h2 class="w3-center">Checkout</h2>
+    <div class="w3-card w3-padding w3-margin-top">
+        <button onclick="toggleAccordion('info')" class="w3-button w3-block w3-left-align w3-pink">1. Customer Info</button>
+        <div id="info" class="w3-container w3-hide">
+            <p><input class="w3-input w3-margin-bottom" type="text" placeholder="Full Name"></p>
+            <p><input class="w3-input w3-margin-bottom" type="email" placeholder="Email Address"></p>
+        </div>
 
-.accordion {
-  margin-top: 10px;
-}
+        <button onclick="toggleAccordion('delivery')" class="w3-button w3-block w3-left-align w3-pink">2. Delivery / Collection</button>
+        <div id="delivery" class="w3-container w3-hide">
+            <p><input class="w3-input w3-margin-bottom" type="text" placeholder="Address or Collection Point"></p>
+             <p><input class="w3-input w3-margin-bottom" type="tel" placeholder="Phone Number"></p>
+        </div>
 
-.accordion button {
-  width: 100%;
-  background-color: white;
-  color: var(--text-dark);
-  font-weight: bold;
-  padding: 12px 15px;
-  border: none;
-  border-radius: 4px;
-  margin-top: 10px;
-  text-align: left;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
+        <button onclick="toggleAccordion('promo')" class="w3-button w3-block w3-left-align w3-pink">3. Promo Code</button>
+        <div id="promo" class="w3-container w3-hide">
+            <p><input class="w3-input w3-margin-bottom" type="text" placeholder="Enter Promo Code"></p>
+            <button class="w3-button w3-small w3-black">Apply</button>
+        </div>
 
-.accordion button:hover {
-  background-color: #f0f0f0;
-}
+        <button onclick="toggleAccordion('confirm')" class="w3-button w3-block w3-left-align w3-pink">4. Confirm Order</button>
+        <div id="confirm" class="w3-container w3-hide">
+            <p>Review your order and details before submitting.</p>
+        </div>
+    </div>
 
-.panel {
-  background-color: #fff;
-  color: var(--text-dark);
-  padding: 15px;
-  margin-top: 5px;
-  border-radius: 4px;
-}
+    <div class="w3-card w3-padding w3-margin-top">
+        <h4>Order Summary</h4>
+        <ul class="w3-ul">
+            <li>Single Glaze Doughnut x1 – £2.50</li>
+            <li>Choco Sprinkle Doughnut x 1 – £2.50</li>
+        </ul>
+        <p><strong>Total:</strong> £5.00</p>
+        <button class="w3-button w3-pink w3-block">Place Order</button>
+    </div>
+</section>
 
-.panel input,
-.panel select {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-}
+<script>
+    document.querySelector(".search-btn").onclick = function () {
+        const bar = document.getElementById("searchBar");
+        bar.style.display = (bar.style.display === "none") ? "block" : "none";
+    };
 
-.right-panel h3 {
-  margin-top: 0;
-  font-size: 20px;
-  color: var(--text-light);
-}
+    function toggleSidebar() {
+        const sidebar = document.getElementById("menuSidebar");
+        sidebar.style.display = (sidebar.style.display === "none") ? "block" : "none";
+    }
+    function toggleAccordion(id) {
+        const x = document.getElementById(id);
+        if (x.classList.contains("w3-show")) {
+            x.classList.remove("w3-show");
+            x.classList.add("w3-hide");
+        } else {
+            x.classList.remove("w3-hide");
+            x.classList.add("w3-show");
+        }
+    }
+</script>
 
-.right-panel ul {
-  list-style: none;
-  padding: 0;
-}
-
-.right-panel li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 8px 0;
-}
-
-.right-panel .total {
-  font-weight: bold;
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-footer {
-  background-color: var(--text-dark);
-  color: var(--text-light);
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
-}
+</body>
+</html>
