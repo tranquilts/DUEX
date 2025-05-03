@@ -52,13 +52,15 @@ Menu - ![Screenshot 2025-05-02 001947](https://github.com/user-attachments/asset
 
 Checkout - ![Screenshot 2025-05-02 001909](https://github.com/user-attachments/assets/9c660579-4d0c-4aed-a078-10b90716d18a)
 
+
 Final website sections:
+![image](https://github.com/user-attachments/assets/1900b330-7e00-42fb-b9cf-f817e68fe473)
 
 
 
 Validator: 
-passed
-passed
+ w3 schools passed
+
 
 Attribution
 
