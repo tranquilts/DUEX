@@ -1,113 +1,327 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Tres Delish Donuts</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+    <title>Tres Delish</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF9874;
+            --accent: #FFD7C4;
+            --background: #DAEFFF;
+            --highlight: #9DBDFF;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+        }
+
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: var(--background);
+            color: var(--text-dark);
+        }
+
+        .w3-pink {
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        .w3-card {
+            background-color: var(--accent);
+            border-radius: 10px;
+        }
+
+        .w3-button {
+            border-radius: 5px;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        #home {
+            padding: 80px 20px;
+            background-color: var(--accent);
+            border-radius: 12px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        #home img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        #home h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        #home p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        #menu h2 {
+            font-size: 2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 16px;
+            padding: 20px 0;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel .w3-card {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            width: 250px;
+            text-align: center;
+        }
+
+        .carousel .w3-card img{
+            object-fit: cover;
+            height: 150px;
+        }
+        .nav-links a{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        #checkout h2{
+            text-align: center;
+        }
+        .w3-input{
+            border-radius: 5px;
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .w3-button{
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .w3-bar .nav-links{
+            display: flex;
+            align-items: center;
+        }
+        .w3-bar{
+            display: flex;
+            justify-content: space-between ;
+            align-items: center ;
+        }
+        .w3-bar .w3-left{
+            display: flex;
+            align-items: center;
+        }
+        .w3-bar .w3-right{
+            display: flex;
+            align-items: center;
+        }
+        @media screen and (max-width: 768px) {
+        .w3-bar .nav-links {
+            display: none;
+        }
+        .w3-bar {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .w3-bar .w3-left, .w3-bar .w3-right{
+            width: 100%;
+            justify-content: space-between;
+        }
+        #searchBar{
+            margin-top: 10px;
+        }
+        }
+    </style>
 </head>
 <body>
 
-<header class="top-bar">
-  <img src="images/logo.png" alt="Tres Delish Logo" class="logo">
-       <img src="search.png" alt="Search Icon" class="search">
-              <img src="Group 114.png" alt"Home page" class="navigation bar">
-              <img src="Rectangle 110.png" alt"banner" class="banner">
-              <img src="Group 113.png" alt"cart" class="checkout">
-              <img src="Group 96.png" alt=alert" class="alert">
-              
-                
-              
-  <nav class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#menu">Menu</a>
-       <a href="#checkout">Bulk Buy</a>
-         <a href="#checkout">Custom</a> 
-        <a href="#checkout">Discounts</a>
-           <a href="#checkout">Track Order</a>
-             <a href="#checkout">Login/Sign up</a>
-            
-                
-              
-   
-    
-  </nav>
-</header>
+<div class="w3-sidebar w3-bar-block w3-light-grey w3-left" style="display:none" id="menuSidebar">
+    <button class="w3-bar-item w3-button" onclick="toggleSidebar()">Close ×</button>
+    <a href="#classics" class="w3-bar-item w3-button">Classics</a>
+    <a href="#specials" class="w3-bar-item w3-button">Specials</a>
+    <a href="#occasions" class="w3-bar-item w3-button">Occasions</a>
+    <a href="#vegan" class="w3-bar-item w3-button">Vegan</a>
+    <a href="#glutenfree" class="w3-bar-item w3-button">Gluten Free</a>
+    <a href="#custom" class="w3-bar-item w3-button">Custom</a>
+    <a href="#bundles" class="w3-bar-item w3-button">Bundles</a>
+</div>
 
-<main>
-  <section id="home" class="hero">
-    <h1>A treat in every bite</h1>
+<div class="w3-top">
+    <div class="w3-bar w3-pink w3-padding w3-card" >
+        <div class="w3-bar-item w3-left">
+            <img src="images/image.png" alt="Tres Delish Logo" class="logo">
+        </div>
+        <div class="w3-bar-item nav-links">
+            <a href="#home" class="w3-button">Home</a>
+            <a href="#menu" class="w3-button">Browse Menu</a>
+            <a href="#bulk" class="w3-button">Bulk Buy</a>
+            <a href="#custom" class="w3-button">Custom</a>
+            <a href="#discounts" class="w3-button">Discounts</a>
+            <a href="#trackorder" class="w3-button">Track Order</a>
+            <a href="#checkout" class="w3-button">Login/Signup</a>
+        </div>
+        <div class="w3-bar-item w3-right">
+          <img src="search.png" alt="search" class"search">
+            <button class="w3-button search-btn">🔍</button>
+        </div>
+    </div>
+    <div class="w3-bar w3-padding" style="justify-content: flex-end; display: flex;">
+        <input id="searchBar" class="w3-input w3-border" type="text" placeholder="Search" style="max-width: 200px; display: none;">
+    </div>
+</div>
+
+<div style="padding-top: 100px;"></div>
+
+<section id="home" class="w3-container w3-center w3-card">
+    <h2>A treat in every bite</h2>
     <p>Order fresh doughnuts straight to your door</p>
-    <a href="#menu" class="button">Browse Menu</a>
-    <img src="image.png" alt="Tres Delish Donuts">
-    <img src="images/Group 7.png" alt="Border">
-    <img src="Untitled-1 1.png" alt"Doughnut" class="doughnut">
-    <img src="Untitled-1 2.png" alt"Doughnut" class="doughnut">
-    <img src="Rectangle 2.png" alt"Background" class='background'>
-    <img src="Group 95.png" alt"search button" class="search button">
-    <img src="Order Fresh Donuts straight to your door..png" alt"cta" class="cta">
-  
+    <a href="#menu" class="w3-button w3-pink">Browse Menu</a>
+    <img src="images/Group 15.png" alt="Doughnut Banner">
+</section>
+
+<section id="menu" class="w3-container">
+    <h2>Menu</h2>
+    <button class="w3-button w3-pink" onclick="toggleSidebar()">☰ Open Categories</button>
+    <div class="carousel">
+        <div class="w3-card">
+            <img src="Group 15.png" alt="Mixed Doughnut" >
+            <div class="w3-container">
+                <h4>Mixed Doughnut Bundle</h4>
+             <h5>Vegan</h5>
+          
+              <p>£15.00</p>
       
-    
-      
-  </section>
+              <p>An amazing bundle of a different variety of doughnuts...</p>
+            </div>
+        </div>
+        <div class="w3-card">
+            <img src="images/Group 1.jpg" alt="Mixed" >
+            <div class="w3-container">
+                <h4>Mini Doughnut Balls Bundle</h4>
+              <h5>Gluten Free</h5>
+                <p>£12.00</p>
+              <p>Mini doughnut bites of joy, perfect to satisfy any cravings...</p>
+            </div>
+        </div>
+        <div class="w3-card">
+            <img src="Group 2.png" alt="gLAZE" >
+            <div class="w3-container">
+                <h4>Single Glaze Doughnut</h4>
+              <h5>Vegetarian</h5>
+                <p>£2.50</p>
+              <p>A classic single glazed doughnut...</p>
+            </div>
+        
+        <div class="w3-card">
+            <img src="Group 3.png" alt="Milk Choc" >
+            <div class="w3-container">
+                <h4>Choco Sprinkle Doughnut</h4> 
+              <h5><strong>Vegan</strong></h5>
+                <p>£2.50</p>
+              <p>Choco sprinkle doughnuts, perfect for all choco lovers...</p>
+              <</h5>
+            </div>
+        </div>
+        <div class="w3-card">
+            <img src="Group 4.png" alt="Heart" >
+            <div class="w3-container">
+                <h4>Strawberry Heart Doughnut</h4>
+              <h5>Vegatarian</h5>
+                <p>£5.00</p>
+              <p> In love... with strawberry heart shaped doughnuts...</p>
+            </div>
+        </div>
+        <div class="w3-card">
+            <img src="Group 5.png" alt"Lemon" class="Glaze" >
+            <div class="w3-container">
+                <h4>Lemon Glaze Doughnut</h4>
+              <h5>Vegan</h5>
+                <p>£6.00</p>
+              <p>Doughnuts with a tangy lemon glaze drizzled on top...</p>
+            </div>
+        
 
-  <section id="menu" class="carousel">
-    <!-- Only showing 6 products as requested -->
-    <div class="card"><img src="Group 15.png"><h4>Mixed Doughnut Bundle</h4><p>£15.00</p></div>
-    <div class="card"><img src="Group 1.png"><h4>Mini Doughnut Ball Bites</h4><p>£12.00</p></div>
-    <div class="card"><img src="Group 2.pngh4>Single Glazed Doughnut</h4><p>£2.50</p></div>
-    <div class="card"><img src="Group 3.png"><h4>Choco Sprinkle Doughnut</h4><p>£2.50</p></div>
-    <div class="card"><img src="Group 4.png"><h4>Strawberry Heart Doughnut</h4><p>£5.00</p></div>
-    <div class="card"><img src="Group 5.png"><h4>Lemon Glaze Doughnut</h4><p>£6.00</p></div>
-  </section>
 
-  <section id="checkout" class="checkout">
-    <div class="left-panel">
-      <h2>Checkout</h2>
-<img src="Rectsngle 43.png" alt'background' class='background'>
-      <div class="accordion">
-        <button onclick="toggleAccordion('info')">1. Customer Info</button>
-        <div id="info" class="panel">
-          <input type="text" placeholder="Full Name">
-          <input type="email" placeholder="Email Address">
+
+        >
+
+<section id="checkout" class="w3-container">
+    <h2 class="w3-center">Checkout</h2>
+    <div class="w3-card w3-padding w3-margin-top">
+        <button onclick="toggleAccordion('info')" class="w3-button w3-block w3-left-align w3-pink">1. Customer Info</button>
+        <div id="info" class="w3-container w3-hide">
+            <p><input class="w3-input w3-margin-bottom" type="text" placeholder="Full Name"></p>
+            <p><input class="w3-input w3-margin-bottom" type="email" placeholder="Email Address"></p>
         </div>
 
-        <button onclick="toggleAccordion('delivery')">2. Delivery / Collection</button>
-        <div id="delivery" class="panel">
-          <input type="text" placeholder="Address">
-          <input type="tel" placeholder="Phone Number">
+        <button onclick="toggleAccordion('delivery')" class="w3-button w3-block w3-left-align w3-pink">2. Delivery / Collection</button>
+        <div id="delivery" class="w3-container w3-hide">
+            <p><input class="w3-input w3-margin-bottom" type="text" placeholder="Address or Collection Point"></p>
+             <p><input class="w3-input w3-margin-bottom" type="tel" placeholder="Phone Number"></p>
         </div>
 
-        <button onclick="toggleAccordion('promo')">3. Promo Code</button>
-        <div id="promo" class="panel">
-          <input type="text" placeholder="Promo Code">
+        <button onclick="toggleAccordion('promo')" class="w3-button w3-block w3-left-align w3-pink">3. Promo Code</button>
+        <div id="promo" class="w3-container w3-hide">
+            <p><input class="w3-input w3-margin-bottom" type="text" placeholder="Enter Promo Code"></p>
+            <button class="w3-button w3-small w3-black">Apply</button>
         </div>
 
-        <button onclick="toggleAccordion('confirm')">4. Confirm Order</button>
-        <div id="confirm" class="panel">
-          <p>Review your order before submitting your order.</p>
+        <button onclick="toggleAccordion('confirm')" class="w3-button w3-block w3-left-align w3-pink">4. Confirm Order</button>
+        <div id="confirm" class="w3-container w3-hide">
+            <p>Review your order and details before submitting your order.</p>
         </div>
-      </div>
     </div>
 
-    <div class="right-panel">
-      <h3>Order Summary</h3>
-      <ul>
-        <li>Glazed x1 – £2.50</li>
-        <li>Chocolate x1 – £2.50</li>
-      </ul>
-      <p><strong>Total:</strong>£5.00</p>
-      <button class="button">Place Order</button>
+    <div class="w3-card w3-padding w3-margin-top">
+        <h4>Order Summary</h4>
+        <ul class="w3-ul">
+            <li>Single Glaze Doughnut x1 – £2.50</li>
+            <li>Choco Sprinkle Doughnut x 1 – £2.50</li>
+        </ul>
+        <p><strong>Total:</strong> £5.00</p>
+        <button class="w3-button w3-pink w3-block">Place Order</button>
     </div>
-  </section>
-</main>
+</section>
 
 <script>
-  function toggleAccordion(id) {
-    const panel = document.getElementById(id);
-    panel.style.display = panel.style.display === "block" ? "none" : "block";
-  }
+    document.querySelector(".search-btn").onclick = function () {
+        const bar = document.getElementById("searchBar");
+        bar.style.display = (bar.style.display === "none") ? "block" : "none";
+    };
+
+    function toggleSidebar() {
+        const sidebar = document.getElementById("menuSidebar");
+        sidebar.style.display = (sidebar.style.display === "none") ? "block" : "none";
+    }
+    function toggleAccordion(id) {
+        const x = document.getElementById(id);
+        if (x.classList.contains("w3-show")) {
+            x.classList.remove("w3-show");
+            x.classList.add("w3-hide");
+        } else {
+            x.classList.remove("w3-hide");
+            x.classList.add("w3-show");
+        }
+    }
 </script>
 
 </body>
